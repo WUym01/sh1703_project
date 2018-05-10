@@ -1,0 +1,114 @@
+[
+    {
+        "model": "cards.cardstatus",
+        "fields": {
+            "remark": "",
+            "name": "正常"
+        },
+        "pk": 1
+    },
+    {
+        "model": "cards.cardstatus",
+        "fields": {
+            "remark": "",
+            "name": "挂失"
+        },
+        "pk": 2
+    },
+    {
+        "model": "cards.cardstatus",
+        "fields": {
+            "remark": "",
+            "name": "冻结"
+        },
+        "pk": 3
+    },
+    {
+        "model": "cards.cardstatus",
+        "fields": {
+            "remark": "",
+            "name": "注销"
+        },
+        "pk": 4
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "开户",
+            "name": "开户"
+        },
+        "pk": 1
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "销户",
+            "name": "销户"
+        },
+        "pk": 2
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "修改账号信息",
+            "name": "修改账号信息"
+        },
+        "pk": 3
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "挂失",
+            "name": "挂失"
+        },
+        "pk": 4
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "补办",
+            "name": "补办"
+        },
+        "pk": 5
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "冻结",
+            "name": "冻结"
+        },
+        "pk": 6
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "解冻",
+            "name": "解冻"
+        },
+        "pk": 7
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "存款",
+            "name": "存款"
+        },
+        "pk": 8
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "取款",
+            "name": "取款"
+        },
+        "pk": 9
+    },
+    {
+        "model": "cards.cardoperate",
+        "fields": {
+            "remark": "转账",
+            "name": "转账"
+        },
+        "pk": 10
+    }
+]

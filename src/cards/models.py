@@ -40,9 +40,26 @@ class Card(models.Model):
 
         )
 
+    #为了在卡的字段里面显示姓名
     def name(self):
         return self.cardinfo.name
     name.short_description = '姓名'
+
+    def to_json(self):
+        info = {
+            'id': self.id,
+            'balance': self.balance,
+            'balance_available': self.balance_available,
+            'balance_freeze': self.balance_freeze,
+            'status': self.status_id,
+
+        }
+        return info
+
+    @classmethod
+    def createcard(cls, balance, balance_available, balance_freeze, status):
+        card = cls(balance=balance, balance_available=balance_available, balance_freeze=balance_freeze, status=status)
+        return card
 
 class CardInfo(models.Model):
     '''用户信息'''
@@ -57,6 +74,12 @@ class CardInfo(models.Model):
 
     def __str__(self):
         return self.name
+
+    @classmethod
+    def createcardinfo(cls, name, phone, email, card):
+        cardinfo = cls(name=name, phone=phone, email=email, card=card)
+        return cardinfo
+
 
 class CardHistory(models.Model):
     '''银行卡的流水账'''
@@ -81,6 +104,13 @@ class CardHistory(models.Model):
             card_id=self.card.id,
             operator=self.operator.name,
         )
+
+    @classmethod
+    def createcardhistory(cls, card, remark, operator):
+
+        cardhistory = cls(card=card, remark=remark, operator=operator)
+
+        return cardhistory
 
 
 
