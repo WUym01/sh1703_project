@@ -1,0 +1,26 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n admin_urls static admin_list %}
+
+
+{% block content %}
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+
+    <h1>存钱</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <div>
+            <label>银行卡号：</label>
+            <input type="text" name="card_id" />
+        </div>
+        <div>
+            <label>发生金额：</label>
+            <input type="text" name="money" />
+        </div>
+
+        <button type="submit">提交</button>
+    </form>
+{% endblock %}

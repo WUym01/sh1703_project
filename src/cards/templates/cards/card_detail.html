@@ -1,0 +1,22 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n admin_urls static admin_list %}
+
+
+{% block content %}
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>状态</th>
+            <th>余额</th>
+            <th>可用金额</th>
+            <th>冻结金额</th>
+        </tr>
+        <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.status_zh }}</td>
+            <td>{{ obj.balance }}</td>
+            <td>{{ obj.balance_available }}</td>
+            <td>{{ obj.balance_freeze }}</td>
+        </tr>
+    </table>
+{% endblock %}

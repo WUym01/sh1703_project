@@ -1,0 +1,43 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n admin_urls static admin_list %}
+
+
+{% block content %}
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>状态</th>
+            <th>余额</th>
+            <th>可用金额</th>
+            <th>冻结金额</th>
+        </tr>
+        {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.status_zh }}</td>
+                <td>{{ obj.balance }}</td>
+                <td>{{ obj.balance_available }}</td>
+                <td>{{ obj.balance_freeze }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if contacts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ contacts.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+            </span>
+
+            {% if contacts.has_next %}
+                <a href="?page={{ contacts.next_page_number }}">next</a>
+                <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+{% endblock %}
